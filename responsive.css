@@ -1,0 +1,55 @@
+/* ==========================================================
+   responsive.css — tablet, mobile, dan Home potret
+   ========================================================== */
+@media (max-width: 960px) {
+  .mgrid, .mgrid-calc, .mgrid-m4 { grid-template-columns: 1fr; }
+  .illus { max-width: 420px; margin: 0 auto; width: 100%; }
+  .illus-sungkem-img { width: 56%; }
+  .dash-hero { grid-template-columns: 1fr; }
+  .missiongrid { grid-template-columns: repeat(2, 1fr); }
+  .missioncard, .missioncard:nth-child(n+4) { grid-column: span 1; }
+  .missioncard:last-child { grid-column: span 2; }
+  .brief-grid { grid-template-columns: 1fr; } .brief-side { display: none; }
+  .deco-gunungan { display: none; }
+}
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .page { padding: 18px 14px 60px; }
+  .woodcard { --cpy: 18px; --cpx: 16px; }
+  body:not([data-theme="scene"]) #view::before, body:not([data-theme="scene"]) #view::after { height: 34px; background-size: auto 34px; }
+  .teamgrid { grid-template-columns: 1fr; gap: 14px; }
+  .teamcard { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; text-align: left; gap: 2px 12px; padding: 14px; }
+  .tc-ico { grid-row: span 3; margin: 0; width: 48px; height: 48px; } .tc-name { min-height: 0; flex-basis: 100%; padding-left: 60px; margin-top: -26px; }
+  .tc-team { font-size: 1.25rem; } .tc-case { align-self: center; } .tc-prog { margin-left: auto; }
+  .missiongrid { grid-template-columns: 1fr; } .missioncard, .missioncard:nth-child(n+4), .missioncard:last-child { grid-column: auto; min-height: 0; }
+  .topbar { grid-template-columns: auto 1fr auto; gap: 6px; padding-left: 10px; padding-right: 10px; } .tb-title { font-size: .78rem; letter-spacing: .06em; } .tb-page { font-size: .75rem; }
+  .roundbtn { width: 42px; height: 42px; } .ctxstrip { top: 62px; padding: 6px 12px; font-size: .85rem; } .cs-prog { margin-left: 0; } .cs-bar { width: 70px; }
+  .jbtn { padding: 12px 18px; } .btnrow .jbtn { flex: 1 1 100%; } .jbtn-big { padding: 14px 20px; }
+  .helper { grid-template-columns: 1fr 1fr; } .calc-grid { grid-template-columns: 1fr; } .patgrid, .chartgrid { grid-template-columns: 1fr; }
+  .formula { font-size: 1.1rem; } .grid { font-size: .9rem; } .nextup .jbtn { margin-left: 0; width: 100%; }
+  .modal { padding: 24px 16px 18px; } .modal-actions .jbtn { flex: 1 1 100%; }
+  .final > .final-card { padding: 24px 16px 26px; }
+}
+
+/* Home & Final — layout potret (ponsel/tablet berdiri): satuan --u = 1% tinggi layar */
+@media (max-aspect-ratio: 1/1) {
+  .home, .final { --u: 1svh; }
+  .titleplate { top: calc(var(--u) * 7); width: min(92vw, calc(var(--u) * 46)); padding: calc(var(--u) * 3) 4vw calc(var(--u) * 5.4); }
+  .titleplate h1 { font-size: min(calc(var(--u) * 6.2), 13vw); } .tp-crest { height: calc(var(--u) * 6.2); top: calc(var(--u) * -4.6); }
+  .titleplate::before, .titleplate::after { width: calc(var(--u) * 4.4); height: calc(var(--u) * 4.4); margin-top: calc(var(--u) * -3); } .titleplate::before { left: -2.2vw; } .titleplate::after { right: -2.2vw; }
+  .subplate { width: 88%; bottom: calc(var(--u) * -3.8); font-size: min(calc(var(--u) * 1.9), 3.9vw); padding: calc(var(--u) * 1) 6vw; }
+  .treeline { top: calc(var(--u) * 36); height: calc(var(--u) * 34); } .h-ground { top: calc(var(--u) * 63); }
+  .h-pendopo { top: calc(var(--u) * 37); height: calc(var(--u) * 27); max-width: 96vw; }
+  .h-couple, .f-couple { left: 2vw; bottom: calc(var(--u) * 20); height: calc(var(--u) * 34); max-width: 42vw; object-fit: contain; object-position: bottom; }
+  .h-gamelan, .f-gamelan { right: 1vw; bottom: calc(var(--u) * 20); height: calc(var(--u) * 18); max-width: 56vw; object-fit: contain; object-position: bottom; }
+  .h-janur { height: calc(var(--u) * 24); top: calc(var(--u) * 3); } .h-janur-l { left: 2vw; } .h-janur-r { right: 2vw; top: calc(var(--u) * 4); }
+  .h-gate { height: calc(var(--u) * 62); width: calc(var(--u) * 12); top: 0; }
+  .startwrap { top: auto; bottom: calc(var(--u) * 9); }
+  .startbtn { width: min(78vw, calc(var(--u) * 32)); height: calc(var(--u) * 8); font-size: min(calc(var(--u) * 3.6), 9vw); gap: 3vw; }
+  .startbtn .ico { width: calc(var(--u) * 3); height: calc(var(--u) * 3); }
+  .home-tag { bottom: calc(var(--u) * 1.2); font-size: min(calc(var(--u) * 1.6), 3.5vw); padding: 0 4vw; }
+  .bush { bottom: calc(var(--u) * -2); width: calc(var(--u) * 16); height: calc(var(--u) * 11); }
+  .final { padding-bottom: 38svh; } .f-pendopo { bottom: calc(var(--u) * 17); height: calc(var(--u) * 22); max-width: 96vw; } .final .f-couple { bottom: calc(var(--u) * 5); } .final .f-gamelan { bottom: calc(var(--u) * 4); }
+  .final .treeline { bottom: calc(var(--u) * 20); height: calc(var(--u) * 24); } .final .h-ground { height: 26svh; }
+}
+@media (max-height: 520px) and (orientation: landscape) { .ctxstrip { position: static; } .topbar { position: static; } }
